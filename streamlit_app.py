@@ -79,7 +79,7 @@ region_options = st.multiselect("Selected regions:",
                                 region_ls)
 
 chart_data_idx = country_sales_df["Region"].isin(region_options)
-chart_data = country_sales_df.loc[chart_data_idx]
+chart_data = country_sales_df.loc[chart_data_idx, :].reset_index(drop = True)
 
 with st.container():
     st.write("**Units Sold by Marketplace**")
